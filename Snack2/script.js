@@ -14,9 +14,12 @@ const randomNum = Math.round(Math.random() * 100 + 1);
 let userNum;
 do {
     
-    userNum = prompt(`Inserisci un numero inserisci "esci" per arrenderti`);
+    userNum = prompt(`Inserisci un numero o inserisci "fine" per arrenderti`);
 
-    if (isNaN(userNum)||(userNum === "")){
+    if (userNum==="fine"){
+        document.querySelector("#result").innerHTML = "Ti sei arreso"
+
+    } else if(isNaN(userNum)||(userNum === "")){
         alert("Devi inseirre un numero!")
     } else if (userNum>randomNum){
         alert("Ritenta: Numero troppo alto!");
@@ -24,6 +27,15 @@ do {
         alert("Ritenta: Numero troppo basso!");
     }
     
-} while (userNum != randomNum && userNum!="esci");
+} while (userNum != randomNum && userNum != "fine" );
 
-document.querySelector("#result").innerHTML = "Hai indovinato!"
+
+if(userNum==="fine"){
+document.querySelector("#result").innerHTML = "Ti sei arreso!"
+
+} else {
+
+    document.querySelector("#result").innerHTML = "Hai vinto!"
+}
+
+

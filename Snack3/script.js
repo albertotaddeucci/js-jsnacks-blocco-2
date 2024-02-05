@@ -41,7 +41,7 @@ let isError = false
 while ((firstArray.length / secondArray.length) != 1 ){
 
     //prendere input
-    const input = prompt("inserisci nome da aggiungere")
+    const input = prompt(`Inserisci nome da aggiungere. Te ne rimangono ${firstArray.length - shorterArray.length}`)
     
     if(!isNaN(input)){
         alert("Attenzione: inserisci un nome!")
