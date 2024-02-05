@@ -14,7 +14,7 @@ const randomNum = Math.round(Math.random() * 100 + 1);
 let userNum;
 do {
     
-    userNum = prompt("Inserisci un numero");
+    userNum = prompt(`Inserisci un numero inserisci "esci" per arrenderti`);
 
     if (isNaN(userNum)||(userNum === "")){
         alert("Devi inseirre un numero!")
@@ -24,6 +24,6 @@ do {
         alert("Ritenta: Numero troppo basso!");
     }
     
-} while (userNum != randomNum);
+} while (userNum != randomNum && userNum!="esci");
 
 document.querySelector("#result").innerHTML = "Hai indovinato!"
