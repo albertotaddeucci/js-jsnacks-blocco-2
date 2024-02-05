@@ -13,9 +13,27 @@ while (sum < 50){
     
     const userNumber = Number(prompt("Inserisci un numero"));
 
-    sum += userNumber;
-    array.push(userNumber);
+    if(isNaN(userNumber)){
+        alert("Attenzione: Devi inserire un numero!")
+    } else {
 
+        sum += userNumber;
+        array.push(userNumber);
+
+    }
+    
 }
 
-document.querySelector("#result").innerHTML = `Numeri inseriti: ${array}`
+
+
+
+
+const newList = document.getElementById("list");
+for (i=0; i<array.length; i++){
+    const newElement = document.createElement("li")
+    newElement.innerText = array[i];
+    newElement.classList = "list-group-item text-danger";
+    
+
+    newList.append(newElement);
+}
